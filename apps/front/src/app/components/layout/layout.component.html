@@ -1,0 +1,56 @@
+<appbar-progressbar></appbar-progressbar>
+
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <mat-toolbar-row class="toolbar-row">
+    <ng-container *ngIf="drawerMode$ | async as mode">
+      <ng-container *ngIf="mode === 'over'; else modeElse">
+        <mat-icon class="title" (click)="handleClickDrawerIcon()"
+          >menu</mat-icon
+        >
+        <h1>{{ (pageEnum$ | async).pageTitle }}</h1>
+      </ng-container>
+
+      <ng-template #modeElse>
+        <a href="/" class="logo-container">
+          <span class="title">Nx Front</span>
+          <img
+            src="/assets/images/icon-angular01.png"
+            height="30"
+            class="logo-image"
+            alt="Angular"
+          />
+        </a>
+      </ng-template>
+    </ng-container>
+
+    <a class="logout-link" (click)="handleLogout()" *ngIf="isLoggedIn == true"
+      >Logout</a
+    >
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="full-height">
+  <mat-drawer
+    class="drawer"
+    mode="{{ drawerMode$ | async }}"
+    opened="{{ drawerOpened$ | async }}"
+  >
+    <section>
+      <sidenavi></sidenavi>
+    </section>
+  </mat-drawer>
+
+  <section>
+    <mat-card
+      class="mat-elevation-z6 theme-spacing-padding page-title-container"
+    >
+      <h1 class="theme-spacing-top-bottom">
+        {{ (pageEnum$ | async)?.pageTitle }}
+      </h1>
+      <p>{{ (pageEnum$ | async)?.pageDescription }}</p>
+    </mat-card>
+    <div class="theme-spacing">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</mat-drawer-container>

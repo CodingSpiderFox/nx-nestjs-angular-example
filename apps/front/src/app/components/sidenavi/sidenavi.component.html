@@ -1,0 +1,25 @@
+<mat-list>
+  <ng-container *ngFor="let pageEnum of pageEnums">
+    <ng-container *ngIf="pageEnum.showMenu === true">
+      <ng-container
+        *ngIf="
+          pageEnum.requireLogin === false ||
+          (pageEnum.requireLogin === true && isLogin === true)
+        "
+      >
+        <a
+          routerLink="{{ pageEnum.relativeUrl }}"
+          routerLinkActive="active"
+          (click)="handleClickMenu()"
+        >
+          <mat-list-item>
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <div mat-line>{{ pageEnum.pageTitle }}</div>
+            <div mat-line>{{ pageEnum.pageDescription }}</div>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</mat-list>

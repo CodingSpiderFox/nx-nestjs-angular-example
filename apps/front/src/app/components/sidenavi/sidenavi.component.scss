@@ -1,0 +1,15 @@
+@import '../../../theme.scss';
+
+mat-list-item {
+  /* mouse out */
+  transition: background-color 1.2s;
+  &:hover {
+    /* mouse over */
+    background-color: mat-color($mat-blue-gray, A100);
+    transition: background-color 0.3s;
+  }
+}
+
+mat-list a {
+  text-decoration: none;
+}

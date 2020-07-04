@@ -1,0 +1,31 @@
+scalar Date
+
+type Mutation {
+  registerTodo(todoInput: TodoInput!): Todo!
+  editTodo(id: Int!, todoInput: TodoInput!): Todo!
+  toggleTodoStatus(id: Int!): Todo!
+  removeTodo(id: Int!): Boolean!
+}
+
+input TodoInput {
+  title: String!
+  deadline: Date!
+}
+
+type Query {
+  fetchTodo(id: Int!): Todo
+  fetchTodos: [Todo]
+}
+
+type Todo {
+  id: Int!
+  title: String!
+  complete: Boolean!
+  deadline: Date!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Subscription {
+  todoAdded: Todo!
+}

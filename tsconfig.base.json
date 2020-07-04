@@ -1,0 +1,40 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@share/server/config": [
+        "libs/api-interfaces/src/server/config/index.ts"
+      ],
+      "@share/server/exception": [
+        "libs/api-interfaces/src/server/exception/index.ts"
+      ],
+      "@share/server/service": [
+        "libs/api-interfaces/src/server/service/index.ts"
+      ],
+      "@share/common/entity": [
+        "libs/api-interfaces/src/common/entity/index.ts"
+      ],
+      "@share/common/payload": [
+        "libs/api-interfaces/src/common/payload/index.ts"
+      ],
+      "@share/common/graphql-schema": [
+        "libs/api-interfaces/src/common/graphql-schema/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

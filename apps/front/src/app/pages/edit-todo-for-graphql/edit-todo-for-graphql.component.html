@@ -1,0 +1,35 @@
+<article-container>
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <div class="theme-spacing-top-bottom">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" required />
+        <mat-error *ngIf="todoForm.controls.title.errors?.required != null">
+          Title is required.
+        </mat-error>
+        <mat-error *ngIf="todoForm.controls.title.errors?.maxlength != null"
+          >title maxLength error</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="theme-spacing-top-bottom">
+      <mat-form-field appearance="fill">
+        <mat-label>Deadline</mat-label>
+        <input type="date" matInput formControlName="deadline" required />
+        <mat-error *ngIf="todoForm.controls.deadline.errors?.required != null"
+          >deadline is required</mat-error
+        >
+        <mat-error *ngIf="todoForm.controls.deadline.errors?.pattern != null"
+          >deadline date format error
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="theme-spacing-top-bottom">
+      <button mat-raised-button color="primary" [disabled]="!todoForm.valid">
+        Edit Todo
+      </button>
+    </div>
+  </form>
+</article-container>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <form method="POST" action="/admin/login" class="login-form border border-info">
+      <div class="form-group">
+        <label for="input-username" class="col-form-label-lg">Username</label>
+        <input type="text" class="form-control form-control-lg {{#if validationError.errors }}is-invalid{{/if}}"
+          id="input-username" name="username" placeholder="(ex) admin">
+        <div class="invalid-feedback">
+          {{#if validationError.errors }}
+          <ul>
+            {{#fieldErrors validationError.errors 'username'}}
+            {{#each errors}}
+            <li>{{this}}</li>
+            {{/each}}
+            {{/fieldErrors}}
+          </ul>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="input-password" class="col-form-label-lg">Password</label>
+        <input type="password" class="form-control form-control-lg {{#if validationError.errors }}is-invalid{{/if}}"
+          id="input-password" name="password" placeholder="(ex) admin">
+        <div class="invalid-feedback">
+          {{#if validationError.errors }}
+          <ul>
+            {{#fieldErrors validationError.errors 'password'}}
+            {{#each errors}}
+            <li>{{this}}</li>
+            {{/each}}
+            {{/fieldErrors}}
+          </ul>
+          {{/if}}
+        </div>
+      </div>
+
+      {{#if errorMessage }}
+      <div class="alert alert-warning" role="alert">
+        {{errorMessage}}
+      </div>
+      {{/if}}
+      <button type="submit" class="btn btn-primary">login</button>
+    </form>
+  </div>
+</div>

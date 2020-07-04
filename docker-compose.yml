@@ -1,0 +1,45 @@
+version: "3"
+services:
+  mysql8.0:
+    image: mysql:8.0
+    container_name: nx-nestjs-angular-example-mysql
+    ports:
+      - ${DB_PORT}:3306
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - TZ=${TIMEZONE}
+    volumes:
+      - ./docker/mysql/client/.my.cnf:/root/.my.cnf:ro
+      - ./docker/mysql/server/conf.d:/etc/mysql/conf.d:ro
+      - ./docker/mysql/server/logs:/var/log/mysql:rw
+      - ./docker/mysql/server/initdb.d:/docker-entrypoint-initdb.d:ro
+    networks:
+      - application
+
+  redis:
+    image: bitnami/redis:6.0
+    container_name: nx-nestjs-angular-example-redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - ${REDIS_PORT}:6379
+    volumes:
+      - ./docker/redis/data:/data:rw
+    networks:
+      - application
+
+  # https://docs.redislabs.com/latest/ri/installing/install-docker/
+  redisinsight:
+    image: redislabs/redisinsight:1.5.0
+    container_name: nx-nestjs-angular-example-redisinsight
+    ports:
+      - 8001:8001
+    networks:
+      - application
+
+networks:
+  application:
+    driver: bridge

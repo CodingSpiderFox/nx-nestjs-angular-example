@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "cff0c885-abec-4cb9-8226-8389f3c4850c",
+		"name": "angular-nestjs-nx-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "todo",
+			"item": [
+				{
+					"name": "Get single todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2314a85c-e99f-4933-a208-f83f943b280c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiHost}}/api/todo/{{todoId}}",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all todos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b01a134-a9e3-43fb-a5ff-43a8d105c492",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiHost}}/api/todo",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add single todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46478629-8514-43f7-a55c-b0a71e0d4969",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"const moment = require('moment');",
+									"",
+									"const timestamp = moment().format(\"YYYY-MM-DD HH:mm:ss.SSS\");",
+									"pm.globals.set(\"timestamp\", timestamp);",
+									"",
+									"const random = Math.floor( Math.random() * 60 );",
+									"pm.globals.set(\"randomDeadline\", moment().add(random, 'days').format(\"YYYY-MM-DD\"));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "317a3fbf-5275-4cd3-9209-1fa251bf59cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"task {{timestamp}}\",\n\t\"deadline\": \"{{randomDeadline}}\"\n}"
+						},
+						"url": {
+							"raw": "{{apiHost}}/api/todo",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit single todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46478629-8514-43f7-a55c-b0a71e0d4969",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"task 1-1\",\n\t\"deadline\": \"2020-01-02\",\n\t\"complete\": true\n}"
+						},
+						"url": {
+							"raw": "{{apiHost}}/api/todo/{{todoId}}",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2314a85c-e99f-4933-a208-f83f943b280c",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"pm.test(\"Body is empty\", function () {",
+									"    pm.response.to.have.body(\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiHost}}/api/todo/{{todoId}}",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle todo status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b01a134-a9e3-43fb-a5ff-43a8d105c492",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{apiHost}}/api/todo/{{todoId}}/toggle-status",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"todo",
+								"{{todoId}}",
+								"toggle-status"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{accessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8d60438b-9dcc-4491-bd93-373ed8a9b178",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6b5f3ade-6275-4409-b498-f23e3fcd95c4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get user profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cdb77e09-ad8f-4f1f-b9ed-750d7800296b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiHost}}/api/profile",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ff0951d-55ae-440b-bf97-87c1ce4285b1",
+								"exec": [
+									"const json = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"accessToken\", json.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{apiHost}}/api/login",
+							"host": [
+								"{{apiHost}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "35c90284-157d-4b29-802d-58bec4982005",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cf3be973-0304-4fd2-b543-e23b148dca2e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6a7a34d6-891b-47bc-a54d-bc5f0685b617",
+			"key": "todoId",
+			"value": "1",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,64 @@
+@import './theme.scss';
+
+html {
+  height: 100%;
+  margin-top: 54px;
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  height: 100%;
+  margin: 0;
+}
+/*======================================================*/
+$theme-spacing-padding: 0.6em;
+$theme-spacing-margin: 0.6em;
+
+.theme-spacing-padding {
+  padding: $theme-spacing-padding;
+}
+.theme-spacing-margin {
+  margin: $theme-spacing-margin;
+}
+.theme-spacing {
+  padding: $theme-spacing-padding;
+  margin: $theme-spacing-margin;
+}
+.theme-spacing-top {
+  padding-top: $theme-spacing-padding;
+  margin-top: $theme-spacing-margin;
+}
+.theme-spacing-bottom {
+  padding-bottom: $theme-spacing-padding;
+  margin-bottom: $theme-spacing-margin;
+}
+.theme-spacing-top-bottom {
+  padding-top: $theme-spacing-padding;
+  padding-bottom: $theme-spacing-padding;
+  margin-top: $theme-spacing-margin;
+  margin-bottom: $theme-spacing-margin;
+}
+/*======================================================*/
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.snackbar-bg-success {
+  background-color: mat-color($mat-green, 700);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.snackbar-bg-warning {
+  background-color: mat-color($mat-yellow, 900);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.snackbar-bg-failure {
+  background-color: mat-color($mat-red, 700);
+  font-size: 1.3em;
+  font-weight: bold;
+}

@@ -1,0 +1,1464 @@
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-06-24T17:28:01.812368Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:     9
+# Query_time: 0.011252  Lock_time: 0.000234 Rows_sent: 0  Rows_examined: 0
+use work;
+SET timestamp=1593019681;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:28:01.814806Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:     9
+# Query_time: 0.000770  Lock_time: 0.000316 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019681;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:28:01.820318Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:     9
+# Query_time: 0.003843  Lock_time: 0.000278 Rows_sent: 0  Rows_examined: 414
+SET timestamp=1593019681;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-24T17:28:01.831747Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:     9
+# Query_time: 0.009587  Lock_time: 0.000981 Rows_sent: 0  Rows_examined: 52
+SET timestamp=1593019681;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:28:25.788302Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    10
+# Query_time: 0.011335  Lock_time: 0.001738 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593019705;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:28:25.791844Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    10
+# Query_time: 0.001171  Lock_time: 0.000605 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019705;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:28:25.810184Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    10
+# Query_time: 0.010247  Lock_time: 0.001110 Rows_sent: 0  Rows_examined: 107
+SET timestamp=1593019705;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:28:28.070757Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    11
+# Query_time: 0.010836  Lock_time: 0.001870 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593019708;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:28:28.073894Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    11
+# Query_time: 0.000850  Lock_time: 0.000350 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019708;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:28:28.080176Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    11
+# Query_time: 0.004563  Lock_time: 0.001067 Rows_sent: 2  Rows_examined: 543
+SET timestamp=1593019708;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-24T17:28:28.093441Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    11
+# Query_time: 0.011051  Lock_time: 0.001138 Rows_sent: 0  Rows_examined: 107
+SET timestamp=1593019708;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:30:27.744063Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    12
+# Query_time: 0.013060  Lock_time: 0.001134 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593019827;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:30:27.746985Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    12
+# Query_time: 0.000710  Lock_time: 0.000356 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019827;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:30:27.756708Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    12
+# Query_time: 0.002716  Lock_time: 0.001034 Rows_sent: 0  Rows_examined: 154
+SET timestamp=1593019827;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:30:30.080393Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    13
+# Query_time: 0.013562  Lock_time: 0.002040 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593019830;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:30:30.083099Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    13
+# Query_time: 0.000719  Lock_time: 0.000361 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019830;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:30:30.091620Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    13
+# Query_time: 0.006883  Lock_time: 0.000934 Rows_sent: 3  Rows_examined: 2833
+SET timestamp=1593019830;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-24T17:30:30.096419Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    13
+# Query_time: 0.002733  Lock_time: 0.001246 Rows_sent: 0  Rows_examined: 154
+SET timestamp=1593019830;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:32:05.757174Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    14
+# Query_time: 0.009883  Lock_time: 0.001189 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593019925;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:32:05.759746Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    14
+# Query_time: 0.000744  Lock_time: 0.000312 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019925;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:32:05.768204Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    14
+# Query_time: 0.002737  Lock_time: 0.001097 Rows_sent: 0  Rows_examined: 154
+SET timestamp=1593019925;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:32:08.043658Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    15
+# Query_time: 0.009935  Lock_time: 0.000936 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593019928;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:32:08.046418Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    15
+# Query_time: 0.000687  Lock_time: 0.000299 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593019928;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:32:08.052147Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    15
+# Query_time: 0.003822  Lock_time: 0.000976 Rows_sent: 2  Rows_examined: 2768
+SET timestamp=1593019928;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-24T17:32:08.067797Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    15
+# Query_time: 0.013529  Lock_time: 0.002184 Rows_sent: 0  Rows_examined: 56
+SET timestamp=1593019928;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:33:21.492931Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    14
+# Query_time: 0.000237  Lock_time: 0.000080 Rows_sent: 1  Rows_examined: 2
+SET timestamp=1593020001;
+SELECT `UserEntity`.`id` AS `UserEntity_id`, `UserEntity`.`username` AS `UserEntity_username`, `UserEntity`.`createdAt` AS `UserEntity_createdAt`, `UserEntity`.`updatedAt` AS `UserEntity_updatedAt` FROM `user` `UserEntity` ORDER BY `UserEntity`.`updatedAt` DESC;
+# Time: 2020-06-24T17:33:31.528237Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    14
+# Query_time: 0.000178  Lock_time: 0.000085 Rows_sent: 1  Rows_examined: 2
+SET timestamp=1593020011;
+SELECT `UserEntity`.`id` AS `UserEntity_id`, `UserEntity`.`username` AS `UserEntity_username`, `UserEntity`.`createdAt` AS `UserEntity_createdAt`, `UserEntity`.`updatedAt` AS `UserEntity_updatedAt` FROM `user` `UserEntity` ORDER BY `UserEntity`.`updatedAt` DESC;
+# Time: 2020-06-24T17:37:08.330107Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    16
+# Query_time: 0.008848  Lock_time: 0.000867 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593020228;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:37:08.332750Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    16
+# Query_time: 0.000856  Lock_time: 0.000383 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593020228;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:37:08.338010Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    16
+# Query_time: 0.003664  Lock_time: 0.000891 Rows_sent: 4  Rows_examined: 2900
+SET timestamp=1593020228;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-24T17:37:08.349489Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    16
+# Query_time: 0.009381  Lock_time: 0.001045 Rows_sent: 0  Rows_examined: 109
+SET timestamp=1593020228;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-24T17:39:47.538141Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    17
+# Query_time: 0.008663  Lock_time: 0.000920 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593020387;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-24T17:39:47.540451Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    17
+# Query_time: 0.000620  Lock_time: 0.000291 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593020387;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-24T17:39:47.545562Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    17
+# Query_time: 0.003452  Lock_time: 0.000845 Rows_sent: 2  Rows_examined: 2768
+SET timestamp=1593020387;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-24T17:39:47.557014Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    17
+# Query_time: 0.009452  Lock_time: 0.001064 Rows_sent: 0  Rows_examined: 107
+SET timestamp=1593020387;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-25T13:25:09.819368Z
+# User@Host: worker[worker] @  [127.0.0.1]  Id:    18
+# Query_time: 0.000165  Lock_time: 0.000079 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593091509;
+select * from user;
+# Time: 2020-06-25T13:25:22.953735Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    19
+# Query_time: 0.011492  Lock_time: 0.001992 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593091522;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-25T13:25:22.957797Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    19
+# Query_time: 0.001392  Lock_time: 0.000571 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593091522;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-25T13:25:22.964612Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    19
+# Query_time: 0.004307  Lock_time: 0.001183 Rows_sent: 4  Rows_examined: 2900
+SET timestamp=1593091522;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-25T13:25:22.969918Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    19
+# Query_time: 0.003070  Lock_time: 0.001213 Rows_sent: 0  Rows_examined: 154
+SET timestamp=1593091522;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-25T13:27:15.640221Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    20
+# Query_time: 0.011943  Lock_time: 0.001809 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1593091635;
+SELECT * FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` WHERE `CONSTRAINT_NAME` = 'PRIMARY' AND ((`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'todo') OR (`TABLE_SCHEMA` = 'work' AND `TABLE_NAME` = 'user'));
+# Time: 2020-06-25T13:27:15.644318Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    20
+# Query_time: 0.001622  Lock_time: 0.000795 Rows_sent: 2  Rows_examined: 10
+SET timestamp=1593091635;
+SELECT `SCHEMA_NAME`, `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`, `DEFAULT_COLLATION_NAME` AS `COLLATION` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-06-25T13:27:15.650603Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    20
+# Query_time: 0.004165  Lock_time: 0.001343 Rows_sent: 2  Rows_examined: 2768
+SET timestamp=1593091635;
+SELECT `s`.* FROM `INFORMATION_SCHEMA`.`STATISTICS` `s` LEFT JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME` WHERE ((`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'todo') OR (`s`.`TABLE_SCHEMA` = 'work' AND `s`.`TABLE_NAME` = 'user')) AND `s`.`INDEX_NAME` != 'PRIMARY' AND `rc`.`CONSTRAINT_NAME` IS NULL;
+# Time: 2020-06-25T13:27:15.664405Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    20
+# Query_time: 0.011359  Lock_time: 0.001141 Rows_sent: 0  Rows_examined: 107
+SET timestamp=1593091635;
+SELECT `kcu`.`TABLE_SCHEMA`, `kcu`.`TABLE_NAME`, `kcu`.`CONSTRAINT_NAME`, `kcu`.`COLUMN_NAME`, `kcu`.`REFERENCED_TABLE_SCHEMA`, `kcu`.`REFERENCED_TABLE_NAME`, `kcu`.`REFERENCED_COLUMN_NAME`, `rc`.`DELETE_RULE` `ON_DELETE`, `rc`.`UPDATE_RULE` `ON_UPDATE` FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu` INNER JOIN `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS` `rc` ON `rc`.`constraint_name` = `kcu`.`constraint_name` WHERE (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'todo') OR (`kcu`.`TABLE_SCHEMA` = 'work' AND `kcu`.`TABLE_NAME` = 'user');
+# Time: 2020-06-25T13:27:44.983865Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    20
+# Query_time: 0.000331  Lock_time: 0.000157 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593091664;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`createdAt` AS `TodoEntity_createdAt`, `TodoEntity`.`updatedAt` AS `TodoEntity_updatedAt` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updatedAt` DESC;
+# Time: 2020-06-25T13:27:55.902186Z
+# User@Host: worker[worker] @  [127.0.0.1]  Id:    18
+# Query_time: 0.000233  Lock_time: 0.000132 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593091675;
+select * from todo;
+# Time: 2020-06-25T13:28:04.819517Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    21
+# Query_time: 0.000347  Lock_time: 0.000258 Rows_sent: 1  Rows_examined: 2
+SET timestamp=1593091684;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`createdAt` AS `TodoEntity_createdAt`, `TodoEntity`.`updatedAt` AS `TodoEntity_updatedAt` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updatedAt` DESC;
+# Time: 2020-06-25T13:28:15.515595Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    20
+# Query_time: 0.000347  Lock_time: 0.000176 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593091695;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`createdAt` AS `TodoEntity_createdAt`, `TodoEntity`.`updatedAt` AS `TodoEntity_updatedAt` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updatedAt` DESC;
+# Time: 2020-06-25T13:28:26.774535Z
+# User@Host: worker[worker] @  [172.21.0.1]  Id:    21
+# Query_time: 0.000187  Lock_time: 0.000081 Rows_sent: 5  Rows_examined: 10
+SET timestamp=1593091706;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`createdAt` AS `TodoEntity_createdAt`, `TodoEntity`.`updatedAt` AS `TodoEntity_updatedAt` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updatedAt` DESC;
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.19 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-06-27T18:49:30.374999Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   287
+# Query_time: 0.006123  Lock_time: 0.000115 Rows_sent: 1  Rows_examined: 64
+use work;
+SET timestamp=1593283770;
+SELECT
+            CU.TABLE_NAME TableWithForeignKey,
+            CU.ORDINAL_POSITION FK_PartNo,
+            CU.COLUMN_NAME ForeignKeyColumn,
+            CU.REFERENCED_TABLE_NAME TableReferenced,
+            CU.REFERENCED_COLUMN_NAME ForeignKeyColumnReferenced,
+            RC.DELETE_RULE onDelete,
+            RC.UPDATE_RULE onUpdate,
+            CU.CONSTRAINT_NAME object_id
+           FROM
+            INFORMATION_SCHEMA.KEY_COLUMN_USAGE CU
+           JOIN
+            INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS RC
+                ON CU.CONSTRAINT_NAME=RC.CONSTRAINT_NAME AND CU.CONSTRAINT_SCHEMA = RC.CONSTRAINT_SCHEMA
+          WHERE
+            TABLE_SCHEMA IN ('work')
+            AND CU.REFERENCED_TABLE_NAME IS NOT NULL;
+# Time: 2020-06-27T20:31:03.037530Z
+# User@Host: worker[worker] @  [127.0.0.1]  Id:   419
+# Query_time: 0.000146  Lock_time: 0.000066 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593289863;
+select * from user;
+# Time: 2020-06-27T20:35:52.980239Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   425
+# Query_time: 0.000283  Lock_time: 0.000156 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593290152;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-27T20:36:51.513300Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   429
+# Query_time: 0.000302  Lock_time: 0.000202 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593290211;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-27T20:46:46.376795Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   429
+# Query_time: 0.000225  Lock_time: 0.000113 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593290806;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-28T02:38:40.336217Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   429
+# Query_time: 0.000254  Lock_time: 0.000106 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593311920;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-28T16:26:07.282296Z
+# User@Host: worker[worker] @  [127.0.0.1]  Id:   431
+# Query_time: 0.000249  Lock_time: 0.000087 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593361567;
+select * from user;
+# Time: 2020-06-29T15:46:16.856499Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   439
+# Query_time: 0.000243  Lock_time: 0.000172 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593445576;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-29T16:00:55.084251Z
+# User@Host: worker[worker] @  [127.0.0.1]  Id:   450
+# Query_time: 0.000168  Lock_time: 0.000072 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593446455;
+select * from user;
+# Time: 2020-06-29T16:02:31.895182Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   452
+# Query_time: 0.000350  Lock_time: 0.000242 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1593446551;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-29T16:02:46.295421Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   454
+# Query_time: 0.000285  Lock_time: 0.000187 Rows_sent: 1  Rows_examined: 2
+SET timestamp=1593446566;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-29T16:02:53.811918Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   452
+# Query_time: 0.000192  Lock_time: 0.000082 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593446573;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-29T16:03:37.670831Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   452
+# Query_time: 0.000266  Lock_time: 0.000139 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593446617;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-06-30T13:57:41.199764Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   500
+# Query_time: 0.000228  Lock_time: 0.000102 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593525461;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T00:16:05.618854Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   519
+# Query_time: 0.000377  Lock_time: 0.000191 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593562565;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T00:18:27.169663Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   521
+# Query_time: 0.000251  Lock_time: 0.000108 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593562707;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T00:18:35.917220Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   521
+# Query_time: 0.000322  Lock_time: 0.000126 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593562715;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T15:27:13.995172Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   544
+# Query_time: 0.000294  Lock_time: 0.000087 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593617233;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T15:32:27.872080Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   548
+# Query_time: 0.000273  Lock_time: 0.000106 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593617547;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T15:32:40.943284Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   548
+# Query_time: 0.000195  Lock_time: 0.000086 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593617560;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T15:34:30.024122Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   548
+# Query_time: 0.000176  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593617670;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T16:03:01.142618Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   562
+# Query_time: 0.000202  Lock_time: 0.000087 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593619381;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T16:06:50.916274Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   565
+# Query_time: 0.000231  Lock_time: 0.000136 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593619610;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T16:09:29.222688Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   566
+# Query_time: 0.000191  Lock_time: 0.000105 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593619769;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T16:57:35.114445Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   576
+# Query_time: 0.000217  Lock_time: 0.000105 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593622655;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-01T23:56:37.804643Z
+# User@Host: worker[worker] @  [127.0.0.1]  Id:   584
+# Query_time: 0.000231  Lock_time: 0.000109 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1593647797;
+select * from user;
+# Time: 2020-07-01T23:59:33.197993Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   585
+# Query_time: 0.000289  Lock_time: 0.000126 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593647973;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:20:15.009371Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   589
+# Query_time: 0.000254  Lock_time: 0.000087 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649215;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:20:31.594253Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   589
+# Query_time: 0.000180  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649231;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:21:51.208753Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   589
+# Query_time: 0.000381  Lock_time: 0.000132 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649311;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:21:59.007322Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   591
+# Query_time: 0.000249  Lock_time: 0.000144 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649319;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:22:10.929973Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   589
+# Query_time: 0.000225  Lock_time: 0.000086 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649330;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:24:34.462268Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   589
+# Query_time: 0.000248  Lock_time: 0.000113 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649474;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T00:24:51.318977Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   591
+# Query_time: 0.000221  Lock_time: 0.000111 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593649491;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T16:16:53.046922Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   596
+# Query_time: 0.000183  Lock_time: 0.000087 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593706613;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T16:17:39.899701Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   596
+# Query_time: 0.000201  Lock_time: 0.000093 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593706659;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T16:58:59.277713Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   614
+# Query_time: 0.000177  Lock_time: 0.000087 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709139;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:04:11.122184Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000226  Lock_time: 0.000117 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709451;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:04:12.927522Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000258  Lock_time: 0.000103 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709452;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:04:14.438750Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000228  Lock_time: 0.000112 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709454;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:04:23.593900Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000177  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709463;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:04:36.864519Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000393  Lock_time: 0.000112 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709476;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:04:45.366108Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000191  Lock_time: 0.000092 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709485;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:06:16.166686Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000257  Lock_time: 0.000104 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709576;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:07:13.960337Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000174  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709633;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:08:18.899076Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000191  Lock_time: 0.000094 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709698;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:09:00.859354Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000178  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709740;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:09:34.320860Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000216  Lock_time: 0.000105 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593709774;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T17:20:49.966094Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000207  Lock_time: 0.000102 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593710449;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T18:03:54.415894Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000199  Lock_time: 0.000107 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593713034;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-02T23:33:52.591145Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000352  Lock_time: 0.000079 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593732832;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:00:00.002746Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000232  Lock_time: 0.000113 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734400;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:02:07.508030Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000170  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734527;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:02:11.178995Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000246  Lock_time: 0.000104 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734531;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:02:29.264002Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000284  Lock_time: 0.000106 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734549;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:02:40.691715Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000286  Lock_time: 0.000156 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734560;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:03:28.971447Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000368  Lock_time: 0.000152 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734608;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:03:31.898003Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000188  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734611;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:04:03.933502Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000267  Lock_time: 0.000129 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734643;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:04:44.369970Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000197  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734684;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:05:41.841882Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000245  Lock_time: 0.000111 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734741;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:05:50.195428Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000217  Lock_time: 0.000109 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734750;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:07:14.957024Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000592  Lock_time: 0.000198 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734834;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:08:18.806770Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000306  Lock_time: 0.000135 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734898;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:08:47.816407Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000324  Lock_time: 0.000185 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734927;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:09:01.775453Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000229  Lock_time: 0.000117 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734941;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:09:14.193864Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000222  Lock_time: 0.000111 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593734954;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:13:01.991558Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000322  Lock_time: 0.000206 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593735181;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:13:54.946496Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000258  Lock_time: 0.000125 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593735234;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:14:09.715607Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000283  Lock_time: 0.000128 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593735249;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:14:25.395063Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000241  Lock_time: 0.000091 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593735265;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:14:34.300140Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000265  Lock_time: 0.000086 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593735274;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:14:54.297386Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   615
+# Query_time: 0.000185  Lock_time: 0.000088 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593735294;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:31:37.438357Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   616
+# Query_time: 0.000235  Lock_time: 0.000102 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736297;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:37:03.221809Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000218  Lock_time: 0.000091 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736623;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:37:08.127292Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000202  Lock_time: 0.000098 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736628;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:39:05.798569Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000203  Lock_time: 0.000110 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736745;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:41:18.110971Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000353  Lock_time: 0.000121 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736878;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:41:53.825791Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000347  Lock_time: 0.000180 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736913;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:42:16.680099Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000194  Lock_time: 0.000102 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593736936;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:49:12.908928Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000237  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593737352;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:50:00.944234Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000184  Lock_time: 0.000088 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593737400;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T00:50:29.567185Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000165  Lock_time: 0.000080 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593737429;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T01:05:59.678239Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000218  Lock_time: 0.000116 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593738359;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:01:06.540715Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000208  Lock_time: 0.000101 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593777666;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:04:37.462307Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000240  Lock_time: 0.000140 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593777877;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:06:21.358288Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000235  Lock_time: 0.000123 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593777981;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:06:57.415137Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000298  Lock_time: 0.000150 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778017;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:08:09.507925Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000187  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778089;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:08:20.113540Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000202  Lock_time: 0.000118 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778100;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:09:32.788581Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000293  Lock_time: 0.000120 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778172;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:09:58.413865Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000218  Lock_time: 0.000094 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778198;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:10:18.910583Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000249  Lock_time: 0.000118 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778218;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:10:28.361798Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000200  Lock_time: 0.000089 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593778228;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T12:37:22.161488Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000364  Lock_time: 0.000147 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593779842;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:24:55.089141Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000205  Lock_time: 0.000101 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786295;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:30:04.160770Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000182  Lock_time: 0.000080 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786604;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:30:13.695448Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000210  Lock_time: 0.000106 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786613;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:32:08.096524Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000215  Lock_time: 0.000109 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786728;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:34:02.734568Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000219  Lock_time: 0.000110 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786842;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:34:20.848254Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000218  Lock_time: 0.000108 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786860;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:34:58.290327Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000284  Lock_time: 0.000153 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786898;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:35:19.898380Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000216  Lock_time: 0.000095 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593786919;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:37:08.462425Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000221  Lock_time: 0.000125 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787028;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:37:28.013177Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000194  Lock_time: 0.000086 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787048;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:38:58.134055Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000226  Lock_time: 0.000114 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787138;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:39:22.294617Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000214  Lock_time: 0.000104 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787162;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:39:30.981923Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000219  Lock_time: 0.000079 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787170;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:40:07.945681Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000275  Lock_time: 0.000086 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787207;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:40:41.388746Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000215  Lock_time: 0.000115 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787241;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:41:59.654707Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000190  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787319;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:42:39.680059Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000309  Lock_time: 0.000130 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787359;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:43:29.173639Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000247  Lock_time: 0.000125 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787409;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:44:00.007313Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000187  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787440;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:49:31.519816Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000206  Lock_time: 0.000079 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787771;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:51:01.322872Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000227  Lock_time: 0.000100 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787861;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:51:39.504388Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000311  Lock_time: 0.000140 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787899;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:52:02.479539Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000237  Lock_time: 0.000125 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787922;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:52:13.534450Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000265  Lock_time: 0.000119 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593787933;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:53:22.172439Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000270  Lock_time: 0.000119 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788002;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:55:07.994580Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000287  Lock_time: 0.000148 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788107;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T14:55:40.219967Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000309  Lock_time: 0.000125 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788140;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:01:18.216320Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000211  Lock_time: 0.000105 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788478;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:06:47.049012Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000272  Lock_time: 0.000114 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788807;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:07:05.860848Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000200  Lock_time: 0.000100 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788825;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:07:09.989614Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000307  Lock_time: 0.000091 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788829;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:09:40.340858Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000201  Lock_time: 0.000099 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788980;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:09:49.184724Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000214  Lock_time: 0.000109 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593788989;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:11:10.574492Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000198  Lock_time: 0.000087 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789070;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:12:47.713709Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000278  Lock_time: 0.000128 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789167;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:13:39.569441Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000187  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789219;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:15:48.023636Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000199  Lock_time: 0.000088 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789348;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:17:39.857267Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000237  Lock_time: 0.000129 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789459;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:18:12.909794Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000199  Lock_time: 0.000086 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789492;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:18:15.190919Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000304  Lock_time: 0.000130 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789495;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:19:36.236572Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000203  Lock_time: 0.000095 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789576;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:20:35.881374Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000187  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789635;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:24:57.829825Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000287  Lock_time: 0.000118 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789897;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:25:01.781531Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000280  Lock_time: 0.000134 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593789901;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:31:43.170710Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000199  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790303;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:32:02.030144Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000186  Lock_time: 0.000081 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790322;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:33:20.193795Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000181  Lock_time: 0.000086 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790400;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:35:47.228894Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000266  Lock_time: 0.000081 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790547;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:38:56.291259Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000337  Lock_time: 0.000145 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790736;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:39:08.700475Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000262  Lock_time: 0.000149 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790748;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:40:26.164761Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000215  Lock_time: 0.000105 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790826;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:40:37.638053Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000270  Lock_time: 0.000151 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790837;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:40:51.505008Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000178  Lock_time: 0.000087 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790851;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:42:33.929863Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000232  Lock_time: 0.000127 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790953;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:42:40.197527Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000213  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790960;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:43:19.525372Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000231  Lock_time: 0.000129 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593790999;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:45:07.185623Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000209  Lock_time: 0.000102 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791107;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:45:25.257718Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000183  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791125;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:46:28.390228Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000213  Lock_time: 0.000103 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791188;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:49:18.976761Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000279  Lock_time: 0.000125 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791358;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:50:11.372580Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000189  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791411;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:50:19.314373Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000195  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791419;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:51:08.231206Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000208  Lock_time: 0.000080 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791468;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:51:22.908820Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000187  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791482;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:51:45.721416Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000179  Lock_time: 0.000080 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791505;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:51:50.667397Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000314  Lock_time: 0.000205 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791510;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:52:25.853122Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000447  Lock_time: 0.000165 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791545;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:52:49.134403Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000206  Lock_time: 0.000109 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791569;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:53:25.699657Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000200  Lock_time: 0.000088 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791605;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:54:16.454390Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000196  Lock_time: 0.000092 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791656;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:54:29.833925Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000187  Lock_time: 0.000092 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791669;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:57:32.276034Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000292  Lock_time: 0.000092 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791852;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:57:37.385568Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000192  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791857;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:57:41.213528Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000195  Lock_time: 0.000084 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791861;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:57:53.225525Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000203  Lock_time: 0.000102 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791873;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:57:56.693148Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000179  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791876;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:58:15.228949Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000178  Lock_time: 0.000090 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791895;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:58:52.608501Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000175  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791932;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:59:07.027343Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000216  Lock_time: 0.000114 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791947;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T15:59:23.335222Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000175  Lock_time: 0.000085 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593791963;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:00:48.682783Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000200  Lock_time: 0.000091 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792048;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:02.711593Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000165  Lock_time: 0.000082 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792062;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:05.486861Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000267  Lock_time: 0.000128 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792065;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:08.378062Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000188  Lock_time: 0.000083 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792068;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:23.027822Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000226  Lock_time: 0.000112 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792083;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:24.619457Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000219  Lock_time: 0.000114 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792084;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:27.900292Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000219  Lock_time: 0.000111 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792087;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:48.373977Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000206  Lock_time: 0.000110 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792108;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:53.375296Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000186  Lock_time: 0.000088 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792113;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:01:55.817830Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000194  Lock_time: 0.000087 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792115;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:08:47.568620Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000206  Lock_time: 0.000093 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792527;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:16:28.341347Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000263  Lock_time: 0.000144 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593792988;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:16:35.890586Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   617
+# Query_time: 0.000192  Lock_time: 0.000085 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593792995;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:41:00.252753Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   618
+# Query_time: 0.000497  Lock_time: 0.000319 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593794460;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:50:34.918542Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000283  Lock_time: 0.000159 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593795034;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:51:24.784644Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000199  Lock_time: 0.000099 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593795084;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:52:56.170167Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000727  Lock_time: 0.000160 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593795176;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:54:44.333654Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000276  Lock_time: 0.000111 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593795284;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:54:48.413876Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000207  Lock_time: 0.000108 Rows_sent: 2  Rows_examined: 4
+SET timestamp=1593795288;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:56:13.602153Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000220  Lock_time: 0.000107 Rows_sent: 3  Rows_examined: 6
+SET timestamp=1593795373;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:56:24.926062Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000174  Lock_time: 0.000082 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795384;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:56:31.355400Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000302  Lock_time: 0.000152 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795391;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:58:29.046712Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000240  Lock_time: 0.000104 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795509;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:58:37.392091Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000398  Lock_time: 0.000172 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795517;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T16:59:25.460154Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000321  Lock_time: 0.000198 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795565;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:00:00.743859Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000191  Lock_time: 0.000084 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795600;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:00:30.024179Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000206  Lock_time: 0.000088 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795630;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:00:54.450437Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   619
+# Query_time: 0.000286  Lock_time: 0.000104 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593795654;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:07:45.097624Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000239  Lock_time: 0.000097 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796065;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:09:15.841601Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000280  Lock_time: 0.000124 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796155;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:09:53.089467Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000178  Lock_time: 0.000084 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796193;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:09:55.808397Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000227  Lock_time: 0.000106 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796195;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:11:55.451472Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000191  Lock_time: 0.000103 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796315;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:12:18.739279Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000252  Lock_time: 0.000115 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796338;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:12:26.376444Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000211  Lock_time: 0.000103 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796346;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:12:44.738750Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000277  Lock_time: 0.000122 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796364;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:12:49.954951Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000210  Lock_time: 0.000105 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796369;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:13:39.879505Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000235  Lock_time: 0.000134 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796419;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:14:03.316957Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000297  Lock_time: 0.000132 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796443;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:14:08.360764Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000191  Lock_time: 0.000086 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796448;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:14:12.852084Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000280  Lock_time: 0.000100 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796452;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:14:17.132073Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000191  Lock_time: 0.000086 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796457;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:14:21.651278Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000210  Lock_time: 0.000081 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796461;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-03T17:14:26.358294Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   621
+# Query_time: 0.000266  Lock_time: 0.000108 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593796466;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T10:36:29.392818Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   623
+# Query_time: 0.000179  Lock_time: 0.000086 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593858989;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T10:36:35.865657Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000218  Lock_time: 0.000128 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593858995;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T10:36:37.385598Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   623
+# Query_time: 0.000259  Lock_time: 0.000147 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593858997;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T10:37:57.330108Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   623
+# Query_time: 0.000208  Lock_time: 0.000092 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593859077;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T10:38:03.448507Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   623
+# Query_time: 0.000195  Lock_time: 0.000085 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593859083;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:45:55.562539Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000179  Lock_time: 0.000088 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593866755;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:46:12.975529Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000335  Lock_time: 0.000131 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593866772;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:47:45.859635Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000221  Lock_time: 0.000080 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593866865;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:48:18.542187Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000181  Lock_time: 0.000088 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593866898;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:48:39.641716Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000204  Lock_time: 0.000093 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593866919;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:49:21.627995Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000189  Lock_time: 0.000091 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593866961;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:50:24.207351Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000211  Lock_time: 0.000086 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593867024;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T12:50:42.682448Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   624
+# Query_time: 0.000222  Lock_time: 0.000114 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593867042;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;
+# Time: 2020-07-04T13:15:33.691901Z
+# User@Host: worker[worker] @  [172.22.0.1]  Id:   630
+# Query_time: 0.000287  Lock_time: 0.000131 Rows_sent: 4  Rows_examined: 8
+SET timestamp=1593868533;
+SELECT `TodoEntity`.`id` AS `TodoEntity_id`, `TodoEntity`.`title` AS `TodoEntity_title`, `TodoEntity`.`complete` AS `TodoEntity_complete`, `TodoEntity`.`deadline` AS `TodoEntity_deadline`, `TodoEntity`.`created_at` AS `TodoEntity_created_at`, `TodoEntity`.`updated_at` AS `TodoEntity_updated_at` FROM `todo` `TodoEntity` ORDER BY `TodoEntity`.`updated_at` DESC;

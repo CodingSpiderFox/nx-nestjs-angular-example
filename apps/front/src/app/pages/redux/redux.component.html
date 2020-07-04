@@ -1,0 +1,72 @@
+<article-container>
+  <h1>Calculate Result</h1>
+
+  <div class="theme-spacing">
+    <span class="calculate-result-label">{{ count$ | async }}</span>
+  </div>
+  <div class="theme-spacing">
+    <button mat-stroked-button color="accent" (click)="handleReset()">
+      <span class="calculate-button-label">reset</span>
+    </button>
+  </div>
+</article-container>
+
+<article-container>
+  <h1>Increment / Decrement</h1>
+
+  <div class="theme-spacing">
+    <button mat-raised-button color="primary" (click)="handleIncrement()">
+      <span class="calculate-button-label">+ 1</span>
+    </button>
+    <button mat-raised-button color="accent" (click)="handleDecrement()">
+      <span class="calculate-button-label">- 1</span>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h1>Calculate</h1>
+
+  <div class="theme-spacing-bottom">
+    <mat-form-field class="example-full-width">
+      <mat-label>Input number !!</mat-label>
+      <input
+        type="number"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        matInput
+        (keyup)="handleInputValue($event)"
+        value="{{ inputValue }}"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="handleCalculate('plus')">
+      <span class="calculate-button-label">+</span>
+    </button>
+    <button mat-raised-button color="accent" (click)="handleCalculate('minus')">
+      <span class="calculate-button-label">-</span>
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="handleCalculate('multiply')"
+    >
+      <span class="calculate-button-label">*</span>
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="handleCalculate('divide')"
+    >
+      <span class="calculate-button-label">/</span>
+    </button>
+  </div>
+</article-container>
+
+<article-container>
+  <h1>Progress</h1>
+
+  <div class="theme-spacing" *ngIf="(loading$ | async) == true">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</article-container>
