@@ -6,7 +6,96 @@
 	},
 	"item": [
 		{
-			"name": "todo",
+			"name": "User",
+			"item": [
+				{
+					"name": "Get user profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cdb77e09-ad8f-4f1f-b9ed-750d7800296b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restApiHost}}/api/profile",
+							"host": [
+								"{{restApiHost}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ff0951d-55ae-440b-bf97-87c1ce4285b1",
+								"exec": [
+									"const json = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"accessToken\", json.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{restApiHost}}/api/login",
+							"host": [
+								"{{restApiHost}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "RESTFul API TODO",
 			"item": [
 				{
 					"name": "Get single todo",
@@ -28,9 +117,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiHost}}/api/todo/{{todoId}}",
+							"raw": "{{restApiHost}}/api/todo/{{todoId}}",
 							"host": [
-								"{{apiHost}}"
+								"{{restApiHost}}"
 							],
 							"path": [
 								"api",
@@ -61,9 +150,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiHost}}/api/todo",
+							"raw": "{{restApiHost}}/api/todo",
 							"host": [
-								"{{apiHost}}"
+								"{{restApiHost}}"
 							],
 							"path": [
 								"api",
@@ -121,9 +210,9 @@
 							"raw": "{\n\t\"title\": \"task {{timestamp}}\",\n\t\"deadline\": \"{{randomDeadline}}\"\n}"
 						},
 						"url": {
-							"raw": "{{apiHost}}/api/todo",
+							"raw": "{{restApiHost}}/api/todo",
 							"host": [
-								"{{apiHost}}"
+								"{{restApiHost}}"
 							],
 							"path": [
 								"api",
@@ -163,9 +252,9 @@
 							"raw": "{\n\t\"title\": \"task 1-1\",\n\t\"deadline\": \"2020-01-02\",\n\t\"complete\": true\n}"
 						},
 						"url": {
-							"raw": "{{apiHost}}/api/todo/{{todoId}}",
+							"raw": "{{restApiHost}}/api/todo/{{todoId}}",
 							"host": [
-								"{{apiHost}}"
+								"{{restApiHost}}"
 							],
 							"path": [
 								"api",
@@ -200,9 +289,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{apiHost}}/api/todo/{{todoId}}",
+							"raw": "{{restApiHost}}/api/todo/{{todoId}}",
 							"host": [
-								"{{apiHost}}"
+								"{{restApiHost}}"
 							],
 							"path": [
 								"api",
@@ -234,9 +323,9 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{apiHost}}/api/todo/{{todoId}}/toggle-status",
+							"raw": "{{restApiHost}}/api/todo/{{todoId}}/toggle-status",
 							"host": [
-								"{{apiHost}}"
+								"{{restApiHost}}"
 							],
 							"path": [
 								"api",
@@ -284,15 +373,179 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "user",
+			"name": "GraphQL TODO",
 			"item": [
 				{
-					"name": "Get user profile",
+					"name": "Get single todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query fetchTodo($id: Int!) {\n  fetchTodo(id: $id) {\n    id\n    title\n    complete\n    deadline\n    createdAt\n    updatedAt\n  }\n}\n",
+								"variables": "{\n  \"id\": {{todoId}}\n}"
+							}
+						},
+						"url": {
+							"raw": "{{graphqlHost}}",
+							"host": [
+								"{{graphqlHost}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all todos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  fetchTodos {\n    id,\n    title,\n    complete,\n    deadline,\n    createdAt,\n    updatedAt\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{graphqlHost}}",
+							"host": [
+								"{{graphqlHost}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add single todo",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "cdb77e09-ad8f-4f1f-b9ed-750d7800296b",
+								"id": "abaa3786-1ef3-4c7a-aac2-9b41e9b13e7e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const moment = require('moment');",
+									"",
+									"const timestamp = moment().format(\"YYYY-MM-DD HH:mm:ss.SSS\");",
+									"pm.globals.set(\"timestamp\", timestamp);",
+									"",
+									"const random = Math.floor( Math.random() * 60 );",
+									"pm.globals.set(\"randomDeadline\", moment().add(random, 'days').format(\"YYYY-MM-DD\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation RegisterTodo($todoInput: TodoInput!) {\n  registerTodo(todoInput: $todoInput) {\n    id\n    title\n    complete\n    deadline\n    createdAt\n    updatedAt\n  }\n}\n",
+								"variables": "{\n  \"todoInput\": {\n    \"title\": \"task {{timestamp}}\",\n    \"deadline\": \"{{randomDeadline}}\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{graphqlHost}}",
+							"host": [
+								"{{graphqlHost}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit single todo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8edebd40-ecfc-4a42-bde5-8612103b6c20",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const moment = require('moment');",
+									"",
+									"const timestamp = moment().format(\"YYYY-MM-DD HH:mm:ss.SSS\");",
+									"pm.globals.set(\"timestamp\", timestamp);",
+									"",
+									"const random = Math.floor( Math.random() * 60 );",
+									"pm.globals.set(\"randomDeadline\", moment().add(random, 'days').format(\"YYYY-MM-DD\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation EditTodo($id: Int!, $todoInput: TodoInput!) {\n  editTodo(id: $id, todoInput: $todoInput) {\n    id\n    title\n    complete\n    deadline\n    createdAt\n    updatedAt\n  }\n}\n",
+								"variables": "{\n  \"id\": {{todoId}},\n  \"todoInput\": {\n    \"title\": \"task {{timestamp}}\",\n    \"deadline\": \"{{randomDeadline}}\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{graphqlHost}}",
+							"host": [
+								"{{graphqlHost}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single todo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "17726841-b982-48e3-83d9-ba3d9bd2e28c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation RemoveTodo($id: Int!) {\n  removeTodo(id: $id)\n}\n",
+								"variables": "{\n  \"id\": {{todoId}}\n}"
+							}
+						},
+						"url": {
+							"raw": "{{graphqlHost}}",
+							"host": [
+								"{{graphqlHost}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle todo status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84a3efb7-4748-4b19-b31f-426cdd0f36eb",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -303,67 +556,19 @@
 						}
 					],
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{apiHost}}/api/profile",
-							"host": [
-								"{{apiHost}}"
-							],
-							"path": [
-								"api",
-								"profile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1ff0951d-55ae-440b-bf97-87c1ce4285b1",
-								"exec": [
-									"const json = JSON.parse(responseBody);",
-									"postman.setGlobalVariable(\"accessToken\", json.accessToken);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ToggleTodoStatus($id: Int!) {\n  toggleTodoStatus(id: $id) {\n    id\n    title\n    complete\n    deadline\n    createdAt\n    updatedAt\n  }\n}\n",
+								"variables": "{\n  \"id\": {{todoId}}\n}"
+							}
 						},
 						"url": {
-							"raw": "{{apiHost}}/api/login",
+							"raw": "{{graphqlHost}}",
 							"host": [
-								"{{apiHost}}"
-							],
-							"path": [
-								"api",
-								"login"
+								"{{graphqlHost}}"
 							]
 						}
 					},
@@ -397,7 +602,7 @@
 	],
 	"variable": [
 		{
-			"id": "6a7a34d6-891b-47bc-a54d-bc5f0685b617",
+			"id": "537c3e98-eb6a-4ab3-882c-d4283f9e5f24",
 			"key": "todoId",
 			"value": "1",
 			"type": "string"
